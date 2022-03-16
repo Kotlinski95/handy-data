@@ -1,1 +1,18 @@
-<p> {{ name }} works!</p>
+<button (click)="hidden()">Show title</button>
+<div [hidden]="isHidden">
+    <p> {{ name | uppercase }} works!</p>
+</div>
+<button (click)="show()">Show data</button>
+<div *ngIf="isVisible">
+  <ng-container *ngIf="places.length > 0; then arePlaces; else noPlaces"></ng-container>
+  <ng-template #arePlaces>
+    <ul>
+      <li *ngFor="let place of places; let i = index">
+        {{ i + 1}}. {{ place }}
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template #noPlaces>
+    <p> No places </p>
+  </ng-template>
+</div>

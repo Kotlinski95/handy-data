@@ -11,8 +11,17 @@ var core_1 = require("@angular/core");
 var WeatherDataComponent = /** @class */ (function () {
     function WeatherDataComponent() {
         this.name = "Weather-Data";
+        this.places = ["Katowice", "Krakow", "Zory"];
+        this.isVisible = true;
+        this.isHidden = false;
     }
     WeatherDataComponent.prototype.ngOnInit = function () {
+    };
+    WeatherDataComponent.prototype.show = function () {
+        this.isVisible = !this.isVisible;
+    };
+    WeatherDataComponent.prototype.hidden = function () {
+        this.isHidden = !this.isHidden;
     };
     WeatherDataComponent = __decorate([
         core_1.Component({
